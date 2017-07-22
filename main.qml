@@ -1,7 +1,8 @@
-import QtQuick 2.7
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.3
-import QtMultimedia 5.8
+import QtQuick 2.5
+import QtQuick.Controls 1.0
+import QtQuick.Layouts 1.0
+import QtMultimedia 5.5
+import Qt.labs.settings 1.0
 
 ApplicationWindow {
     visible: true
@@ -38,11 +39,6 @@ ApplicationWindow {
         Label {
             color: "white"
             text: "Rotation (°): "
-            verticalAlignment: Label.AlignVCenter
-            background: Rectangle {
-                color: "black"
-                opacity: 0.5
-            }
         }
 
         ComboBox {
@@ -50,6 +46,11 @@ ApplicationWindow {
             model: [0, 45, 135, 225, 315]
             onCurrentTextChanged:
                 output.rotation = currentText
+
+            Settings {
+                property alias currentText: box.currentText
+                property alias currentIndex: box.currentIndex
+            }
         }
     }
 }
