@@ -1,8 +1,8 @@
-import QtQuick 2.7
-import QtQuick.Controls 2.0
-import QtQuick.Layouts 1.3
+import QtQuick 2.5
+import QtQuick.Controls 1.0
+import QtQuick.Layouts 1.2
 import QtQuick.Dialogs 1.2
-import QtMultimedia 5.8
+import QtMultimedia 5.5
 import Qt.labs.settings 1.0
 import QtQml 2.0
 
@@ -66,11 +66,6 @@ ApplicationWindow {
             Label {
                 color: "white"
                 text: "Rotation (°): "
-                verticalAlignment: Label.AlignVCenter
-                background: Rectangle {
-                    color: "black"
-                    opacity: 0.5
-                }
             }
 
             ComboBox {
