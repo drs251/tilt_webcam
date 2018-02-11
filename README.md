@@ -9,3 +9,7 @@ tilt_webcam uses Qt with QML and should be easily built with any configuration o
 
 ### How to build for Windows XP
 Use Qt Creator, Qt 5.5 and the MinGW 5.5.1 32bit compiler, all of which can easily be installed with the Qt installation tool (although you might need a newer version of Windows as a build environment). Go to Projects -> Build Settings -> Build Environment, click ADD and set LINK to /SUBSYSTEM:WINDOWS,5.01 (i.e. the variable is LINK and the value is /SUBSYSTEM:WINDOWS,5.01). Use [`windeployqt`](https://doc.qt.io/qt-5/windows-deployment.html) to collect the various libraries in the program folder (don't forget to specify the path to main.qml via the --qmldir option).
+
+## Prebuilt binaries
+
+[Currently availble only for Windows XP and higher.](https://github.com/drs251/tilt_webcam/releases/tag/0.1)
