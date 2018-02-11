@@ -57,10 +57,21 @@ ApplicationWindow {
     }
 
     Column {
-        anchors.left: parent.left
-        anchors.bottom: parent.bottom
+        anchors.top: parent.top
+        anchors.right: parent.right
         anchors.margins: 5
         spacing: 5
+
+        Button {
+            id: saveButton
+            text: "Save image..."
+            onClicked: {
+                output.grabToImage(function(result) {
+                    root.savedImage = result
+                    saveImageDialog.open()
+                });
+            }
+        }
 
         Column {
             Label {
@@ -73,17 +84,11 @@ ApplicationWindow {
                 model: [0, 45, 135, 225, 315]
                 onCurrentTextChanged:
                     output.rotation = currentText
-            }
-        }
 
-        Button {
-            id: saveButton
-            text: "Save image..."
-            onClicked: {
-                output.grabToImage(function(result) {
-                    root.savedImage = result
-                    saveImageDialog.open()
-                });
+                Settings {
+                    property alias currentText: box.currentText
+                    property alias currentIndex: box.currentIndex
+                }
             }
         }
     }
