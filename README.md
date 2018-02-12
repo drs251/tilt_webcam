@@ -3,6 +3,8 @@ A simple app to show the output of a webcam on the screen, with the ability to t
 
 This is intended to be used with a certain confocal microscope, which by default shows a tilted image of the sample with respect to the axes of motion. This little program corrects the problem by allowing the user to tilt the image by 45°, 135°, 225° and 315°.
 
+![tilt_webcam in action][https://github.com/drs251/tilt_webcam/raw/master/screenshot.png]
+
 ## How to build
 
 tilt_webcam uses Qt with QML and should be easily built with any configuration of Qt. The suggested tool is Qt Creator.
